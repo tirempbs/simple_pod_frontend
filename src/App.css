@@ -1,25 +1,73 @@
-.App {
-  text-align: center;
+.body {
+  max-width: 700px;
+  margin-left: 274px;
+  margin-right: 274px;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.nav {
+  max-width: 700px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-link {
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  padding-top: 16px;
+}
+
+input[type=text], select {
+  width: 40%;
+  padding: 5px 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-result {
+  width: 600px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.search-result-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search-result-publisher {
+  ffont-size: 12px;
+}
+
+.search-result img {
+  margin-right: 15px;
+  float: left;
+}
+
+.podcast-result {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.podcast-result-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.podcast-result-timedate {
+  font-size: 12px;
+  /* padding-top: 5px; */
+  padding-bottom: 5px;
 }
 
 @keyframes App-logo-spin {
