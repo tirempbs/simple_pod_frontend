@@ -65,21 +65,24 @@ input[type=text], select {
 .podcast-result-title {
   font-size: 16px;
   font-weight: bold;
+  color: #4183c4;
 }
 
 .podcast-result-timedate {
   font-size: 12px;
-  /* padding-top: 5px; */
+  font-weight: bold;
   padding-bottom: 5px;
 }
 
 .podcast-header {
   margin: auto;
-  max-width: 420px;
+  max-width: 700px;
   font-size: 24px;
   color: #4183c4;
   font-weight: bold;
   line-height: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .podcast-header button {

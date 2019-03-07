@@ -8,7 +8,7 @@ class Podcast extends Component {
   }
 
   renderPodcasts = () => {
-    if (this.props.selectedPodcast) {
+    // if (this.props.selectedPodcast) {
       return this.props.selectedPodcast.episodes.map(podcast => {
         let ts = new Date(podcast.pub_date_ms)
         let len = Math.ceil(podcast.audio_length/60)
@@ -17,24 +17,27 @@ class Podcast extends Component {
           <div key={podcast.id} className='podcast-result'>
             <div className='podcast-result-title'>{podcast.title}</div>
             <div className='podcast-result-timedate'>
-              {ts.toLocaleDateString()} - {len} MIN
+              {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
             </div>
             <div dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
           </div>
         )
       })
-    }
+    // }
   }
 
   render() {
+
+    const podcast = this.props.selectedPodcast
     
-    if (this.props.selectedPodcast) {
+    if (podcast) {
       return (
         <div>
           <div className='podcast-header'>
-            {this.props.selectedPodcast.title}
+            <span>{podcast.title}</span>
             <button>Subscribe</button>
           </div>
+          <div>{podcast.description}</div>
           {this.renderPodcasts()}
         </div>
       )
