@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-class PodcastSearch extends Component {
+class Podcast extends Component {
+
+  componentDidMount = () => {
+    this.props.getPodcasts()
+  }
 
   renderPodcasts = () => {
-    if (this.props.selectedPodcasts) {
-      return this.props.selectedPodcasts.episodes.map(podcast => {
+    if (this.props.selectedPodcast) {
+      return this.props.selectedPodcast.episodes.map(podcast => {
         let ts = new Date(podcast.pub_date_ms)
         let len = Math.ceil(podcast.audio_length/60)
 
@@ -22,19 +26,24 @@ class PodcastSearch extends Component {
     }
   }
 
-  render () {
-    if (this.props.selectedPodcasts) {
+  render() {
+    
+    if (this.props.selectedPodcast) {
       return (
         <div>
-          <h2>{this.props.selectedPodcasts.title}</h2>
-          <button>Subscribe</button>
+          <div className='podcast-header'>
+            {this.props.selectedPodcast.title}
+            <button>Subscribe</button>
+          </div>
           {this.renderPodcasts()}
         </div>
       )
+    } else {
+      return null
     }
     
   }
 
 }
 
-export default PodcastSearch;
+export default Podcast;

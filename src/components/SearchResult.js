@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 class SearchResult extends Component {
 
@@ -7,20 +8,23 @@ class SearchResult extends Component {
     return this.props.searchData.map(podcast => {
       return (
         <div key={podcast.id} className='search-result'>
-          <img 
-            src={podcast.image} 
-            alt={podcast.title_original} 
-            width='75px'
-            onClick={this.props.handleSelect}
-            id={podcast.id}
-          />
-          <div 
-            onClick={this.props.handleSelect} 
-            id={podcast.id}
-            className='search-result-title'
-          >
-            {podcast.title_original}
-          </div>
+          <Link to='/podcast' onClick={this.props.getPodcastId}>
+          {this.debugger}
+            <img 
+              id={podcast.id}
+              src={podcast.image} 
+              alt={podcast.title_original} 
+              width='75px'
+            />
+          </Link>
+          <Link to='/podcast' onClick={this.props.getPodcastId}>
+            <div 
+              id={podcast.id}
+              className='search-result-title'
+            >
+              {podcast.title_original}
+            </div>
+          </Link>
           <div className='search-result-publisher'>{podcast.publisher_original}</div>
         </div>
       )
