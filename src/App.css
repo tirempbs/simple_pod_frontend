@@ -58,8 +58,11 @@ input[type=text], select {
 .podcast-result {
   margin: auto;
   max-width: 420px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
+}
+
+.podcast-result:hover {
+  background-color: rgba(65, 131, 196, .1);
 }
 
 .podcast-result-title {

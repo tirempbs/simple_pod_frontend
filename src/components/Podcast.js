@@ -8,22 +8,20 @@ class Podcast extends Component {
   }
 
   renderPodcasts = () => {
-    // if (this.props.selectedPodcast) {
-      return this.props.selectedPodcast.episodes.map(podcast => {
-        let ts = new Date(podcast.pub_date_ms)
-        let len = Math.ceil(podcast.audio_length/60)
+    return this.props.selectedPodcast.episodes.map(podcast => {
+      let ts = new Date(podcast.pub_date_ms)
+      let len = Math.ceil(podcast.audio_length/60)
 
-        return (
-          <div key={podcast.id} className='podcast-result'>
-            <div className='podcast-result-title'>{podcast.title}</div>
-            <div className='podcast-result-timedate'>
-              {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
+      return (
+        <div key={podcast.id} className='podcast-result'>
+          <div className='podcast-result-title'>{podcast.title}</div>
+          <div className='podcast-result-timedate'>
+            {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
           </div>
-        )
-      })
-    // }
+          <div dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
+        </div>
+      )
+    })
   }
 
   render() {
