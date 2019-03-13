@@ -9,7 +9,6 @@ class SearchResult extends Component {
       return (
         <div key={podcast.id} className='search-result'>
           <Link to='/podcast' onClick={this.props.getPodcastId}>
-          {this.debugger}
             <img 
               id={podcast.id}
               src={podcast.image} 
@@ -36,5 +35,5 @@ class SearchResult extends Component {
   }
 }
 
-export default SearchResult
+export default SearchResult;
 

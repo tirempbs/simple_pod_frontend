@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 class Podcast extends Component {
 
@@ -13,19 +14,20 @@ class Podcast extends Component {
       let len = Math.ceil(podcast.audio_length/60)
 
       return (
-        <div key={podcast.id} className='podcast-result'>
-          <div className='podcast-result-title'>{podcast.title}</div>
-          <div className='podcast-result-timedate'>
-            {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
+        <Link to='/episode' onClick={this.props.getEpisodeId} key={podcast.id}>
+          <div id={podcast.id} className='podcast-result'>
+            <div className='podcast-result-title'>{podcast.title}</div>
+            <div className='podcast-result-timedate'>
+              {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
-        </div>
+        </Link>
       )
     })
   }
 
   render() {
-
     const podcast = this.props.selectedPodcast
     
     if (podcast) {
@@ -42,7 +44,6 @@ class Podcast extends Component {
     } else {
       return null
     }
-    
   }
 
 }
