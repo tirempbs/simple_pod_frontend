@@ -4,16 +4,20 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import Search from './components/Search';
 import Profile from './components/Profile';
 import Podcast from './components/Podcast';
+import Episode from './components/Episode';
 
 const searchAPI = 'http://localhost:3000/api/v1/podcasts/search';
 const getPodcastsAPI = 'http://localhost:3000/api/v1/podcasts/getPodcasts';
+const getEpisodeAPI = 'http://localhost:3000/api/v1/podcasts/getEpisode';
 
 class App extends Component {
   state = {
     search: '',
     searchData: [],
     podcastId: '',
-    selectedPodcast: null
+    selectedPodcast: null,
+    episodeId: '',
+    selectedEpisode: null
   }
 
   handleChange = (event) => {
@@ -37,7 +41,6 @@ class App extends Component {
   }
 
   getPodcastId = (event) => { this.setState({ podcastId: event.target.id }) }
-
   getPodcasts = () => {
     const id = this.state.podcastId
     
@@ -49,9 +52,23 @@ class App extends Component {
       }
     })
       .then(r => r.json())
-      .then(data => {
-        this.setState({ selectedPodcast: data})
-      })
+      .then(data => { this.setState({ selectedPodcast: data}) })
+    
+  }
+  
+  getEpisodeId = (event) => { this.setState({ episodeId: event.target.parentElement.id }) }
+  getEpisode = () => {
+    const id = this.state.episodeId
+
+    fetch(`${getEpisodeAPI}/${id}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(r => r.json())
+      .then(data => { this.setState({ selectedEpisode: data }) })
 
   }
 
@@ -80,6 +97,12 @@ class App extends Component {
             <Route path='/podcast' render={(props) => <Podcast {...props} 
                 getPodcasts={this.getPodcasts}
                 selectedPodcast={this.state.selectedPodcast}
+                getEpisodeId={this.getEpisodeId}
+              />} 
+            />
+            <Route path='/episode' render={(props) => <Episode {...props}
+                getEpisode={this.getEpisode}
+                selectedEpisode={this.state.selectedEpisode}
               />} 
             />
           </div>
