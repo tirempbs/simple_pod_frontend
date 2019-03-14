@@ -68,7 +68,9 @@ class App extends Component {
       }
     })
       .then(r => r.json())
-      .then(data => { this.setState({ selectedEpisode: data }) })
+      .then(data => { 
+        this.setState({ selectedEpisode: data })
+      })
 
   }
 

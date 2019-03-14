@@ -105,6 +105,11 @@ input[type=text], select {
   text-align: center;
 }
 
+audio { 
+  margin: auto;
+  width: 100%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

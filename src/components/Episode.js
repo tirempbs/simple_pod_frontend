@@ -16,6 +16,7 @@ class Episode extends Component {
           <div>{episode.podcast.title}</div>
           <div>{episode.title}</div>
           <img src={episode.image} alt={episode.title} />
+          <audio ref='audio_tag' src={episode.audio} controls autoPlay/>
         </div>
       )
     } else {

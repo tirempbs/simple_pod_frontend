@@ -16,11 +16,11 @@ class Podcast extends Component {
       return (
         <Link to='/episode' onClick={this.props.getEpisodeId} key={podcast.id}>
           <div id={podcast.id} className='podcast-result'>
-            <div className='podcast-result-title'>{podcast.title}</div>
-            <div className='podcast-result-timedate'>
+            <div id={podcast.id} className='podcast-result-title'>{podcast.title}</div>
+            <div id={podcast.id} className='podcast-result-timedate'>
               {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
             </div>
-            <div dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
+            <div id={podcast.id} dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
           </div>
         </Link>
       )
