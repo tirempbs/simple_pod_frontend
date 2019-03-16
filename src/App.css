@@ -77,6 +77,10 @@ input[type=text], select {
   padding-bottom: 5px;
 }
 
+.podcast-result-description {
+  color: black;
+}
+
 .podcast-header {
   margin: auto;
   max-width: 700px;
@@ -101,8 +105,21 @@ input[type=text], select {
 
 .episode {
   margin: auto;
-  width: 50%;
+  width: 75%;
   text-align: center;
+}
+
+.episode-podcast-title {
+  font-weight: bold;
+}
+
+.episode-description {
+  margin: 10px;
+  padding: 10px;
+}
+
+.episode-title {
+  font-size: 20px;
 }
 
 audio { 

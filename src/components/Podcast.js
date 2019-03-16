@@ -20,7 +20,11 @@ class Podcast extends Component {
             <div id={podcast.id} className='podcast-result-timedate'>
               {ts.toLocaleDateString()}&ensp;&bull;&ensp;{len} MIN
             </div>
-            <div id={podcast.id} dangerouslySetInnerHTML={{ __html: podcast.description }}></div>
+            <div 
+              className='podcast-result-description' 
+              id={podcast.id} 
+              dangerouslySetInnerHTML={{ __html: podcast.description }}>
+            </div>
           </div>
         </Link>
       )
