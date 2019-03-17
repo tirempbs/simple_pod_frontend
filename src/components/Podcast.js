@@ -41,7 +41,7 @@ class Podcast extends Component {
             <span>{podcast.title}</span>
             <button>Subscribe</button>
           </div>
-          <div>{podcast.description}</div>
+          <div className='podcast-description'>{podcast.description}</div>
           {this.renderPodcasts()}
         </div>
       )

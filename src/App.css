@@ -48,6 +48,7 @@ input[type=text], select {
 
 .search-result-publisher {
   font-size: 14px;
+  color: black;
 }
 
 .search-result img {
@@ -111,6 +112,8 @@ input[type=text], select {
 
 .episode-podcast-title {
   font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 
 .episode-description {
@@ -119,7 +122,7 @@ input[type=text], select {
 }
 
 .episode-title {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 audio { 

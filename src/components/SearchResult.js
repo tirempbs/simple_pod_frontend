@@ -24,7 +24,14 @@ class SearchResult extends Component {
               {podcast.title_original}
             </div>
           </Link>
-          <div className='search-result-publisher'>{podcast.publisher_original}</div>
+          <Link to='/podcast' onClick={this.props.getPodcastId}>
+            <div 
+              id={podcast.id}
+              className='search-result-publisher'
+            >
+              {podcast.publisher_original}
+            </div>
+          </Link>
         </div>
       )
     })
