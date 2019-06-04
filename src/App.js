@@ -6,9 +6,9 @@ import Profile from './components/Profile';
 import Podcast from './components/Podcast';
 import Episode from './components/Episode';
 
-const searchAPI = 'http://localhost:3000/api/v1/podcasts/search';
-const getPodcastsAPI = 'http://localhost:3000/api/v1/podcasts/getPodcasts';
-const getEpisodeAPI = 'http://localhost:3000/api/v1/podcasts/getEpisode';
+const searchAPI = 'https://simple-pod-backend.herokuapp.com/api/v1/podcasts/search';
+const getPodcastsAPI = 'https://simple-pod-backend.herokuapp.com/api/v1/podcasts/getPodcasts';
+const getEpisodeAPI = 'https://simple-pod-backend.herokuapp.com/api/v1/podcasts/getEpisode';
 
 class App extends Component {
   state = {
