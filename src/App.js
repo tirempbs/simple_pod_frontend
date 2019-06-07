@@ -55,6 +55,11 @@ class App extends Component {
       .then(data => { this.setState({ selectedPodcast: data}) })
     
   }
+  handleSubscribe = () => {
+    const id = this.state.podcastId
+
+    fetch()
+  }
   
   getEpisodeId = (event) => { this.setState({ episodeId: event.target.parentElement.id }) }
   getEpisode = () => {
